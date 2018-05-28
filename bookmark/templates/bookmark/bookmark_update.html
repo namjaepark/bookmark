@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Add Bookmark{% endblock%}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %} <!-- 사용자의 악의적인 접근을 막기위해서 사용해주는 방법, 이명령어가 없으면 액션을 취해도 서버에서 반응이 없음  -->
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success" value="Update"/>
+    </form>
+{% endblock %}
